@@ -23365,9 +23365,9 @@ module.exports = require("564f6566ab54c002");
 
 },{"fd30593aab785229":"21dqq"}],"21dqq":[function(require,module,exports) {
 "use strict";
-module.exports = require("f5585cbda765e971");
+module.exports = require("4f73d6dc5ed05acd");
 
-},{"f5585cbda765e971":"6YvXz"}],"6YvXz":[function(require,module,exports) {
+},{"4f73d6dc5ed05acd":"6YvXz"}],"6YvXz":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -25235,7 +25235,7 @@ module.exports = require("f5585cbda765e971");
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
-var m = require("9fac914b6ab4fb70");
+var m = require("2be255306bd4b0bf");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -25254,7 +25254,7 @@ exports.hydrateRoot = function(c, h, o) {
     }
 };
 
-},{"9fac914b6ab4fb70":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"2be255306bd4b0bf":"j6uA9"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -25268,9 +25268,9 @@ function checkDCE() {
     // a false positive.
     throw new Error("^_^");
 }
-module.exports = require("c2071260e4aecc3f");
+module.exports = require("b8c7df60b0b2aecc");
 
-},{"c2071260e4aecc3f":"3iA9v"}],"3iA9v":[function(require,module,exports) {
+},{"b8c7df60b0b2aecc":"3iA9v"}],"3iA9v":[function(require,module,exports) {
 /**
  * @license React
  * react-dom.development.js
@@ -55090,8 +55090,8 @@ function getBestVersionForMixedData(segments, errorCorrectionLevel) {
 };
 
 },{"617ea90e70de6d09":"iXLHI","bbd15c351a35944c":"5yWYH","573690fe458e1b5c":"kbPwo","485e36cad9c17188":"f1e9A","19cde6ef0d37a248":"enfTX"}],"f1e9A":[function(require,module,exports) {
-const VersionCheck = require("f85499e3d3980138");
-const Regex = require("974a3e3d329c5f7d");
+const VersionCheck = require("2ae2d4f35cc3e5eb");
+const Regex = require("462efcbb0095eb30");
 /**
  * Numeric mode encodes data from the decimal digit set (0 - 9)
  * (byte values 30HEX to 39HEX).
@@ -55241,7 +55241,7 @@ const Regex = require("974a3e3d329c5f7d");
     }
 };
 
-},{"f85499e3d3980138":"enfTX","974a3e3d329c5f7d":"3Bqru"}],"enfTX":[function(require,module,exports) {
+},{"2ae2d4f35cc3e5eb":"enfTX","462efcbb0095eb30":"3Bqru"}],"enfTX":[function(require,module,exports) {
 /**
  * Check if QR Code version is valid
  *
@@ -56243,9 +56243,9 @@ module.exports = function() {
 };
 
 },{}],"dGAA6":[function(require,module,exports) {
-module.exports = require("5bc21ceb2c51a7a").getBundleURL("UckoE") + "ledger-icon.a0186cc1.png" + "?" + Date.now();
+module.exports = require("1b30849caae57ff1").getBundleURL("UckoE") + "ledger-icon.a0186cc1.png" + "?" + Date.now();
 
-},{"5bc21ceb2c51a7a":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"1b30849caae57ff1":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -56280,9 +56280,9 @@ exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
 },{}],"aTHwi":[function(require,module,exports) {
-module.exports = require("6222a27e23fa3f09").getBundleURL("UckoE") + "my-near-wallet-icon.ebfed669.png" + "?" + Date.now();
+module.exports = require("31a5c818f9ccaa59").getBundleURL("UckoE") + "my-near-wallet-icon.ebfed669.png" + "?" + Date.now();
 
-},{"6222a27e23fa3f09":"lgJ39"}],"9enQf":[function(require,module,exports) {
+},{"31a5c818f9ccaa59":"lgJ39"}],"9enQf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setupLedger", ()=>setupLedger);
@@ -61014,7 +61014,7 @@ var _hidFramingDefault = parcelHelpers.interopDefault(_hidFraming);
 var _devices = require("@ledgerhq/devices");
 var _logs = require("@ledgerhq/logs");
 var _errors = require("@ledgerhq/errors");
-var Buffer = require("1ad5d8db90076e8a").Buffer;
+var Buffer = require("1d629f198ad8029b").Buffer;
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -61540,7 +61540,7 @@ function getFirstLedgerDevice() {
 }((0, _hwTransportDefault.default));
 exports.default = TransportWebHID;
 
-},{"1ad5d8db90076e8a":"fCgem","@ledgerhq/hw-transport":"59Ey9","@ledgerhq/devices/lib/hid-framing":"fvgJh","@ledgerhq/devices":"fnHxP","@ledgerhq/logs":"i4OI0","@ledgerhq/errors":"EVZMy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"59Ey9":[function(require,module,exports) {
+},{"1d629f198ad8029b":"fCgem","@ledgerhq/hw-transport":"59Ey9","@ledgerhq/devices/lib/hid-framing":"fvgJh","@ledgerhq/devices":"fnHxP","@ledgerhq/logs":"i4OI0","@ledgerhq/errors":"EVZMy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"59Ey9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "TransportError", ()=>(0, _errors.TransportError));
@@ -62789,10 +62789,10 @@ function destroyCircular(from, seen) {
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fvgJh":[function(require,module,exports) {
-var Buffer = require("e6ee92062dc17773").Buffer;
+var Buffer = require("a94deab3945f3789").Buffer;
 "use strict";
 exports.__esModule = true;
-var errors_1 = require("9f544fd09f49c85d");
+var errors_1 = require("56cecc74a828df08");
 var Tag = 0x05;
 function asUInt16BE(value) {
     var b = Buffer.alloc(2);
@@ -62859,7 +62859,7 @@ var initialAcc = {
 };
 exports["default"] = createHIDframing;
 
-},{"e6ee92062dc17773":"fCgem","9f544fd09f49c85d":"EVZMy"}],"fnHxP":[function(require,module,exports) {
+},{"a94deab3945f3789":"fCgem","56cecc74a828df08":"EVZMy"}],"fnHxP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IIGenericHID", ()=>IIGenericHID);
