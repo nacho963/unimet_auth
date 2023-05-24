@@ -17,6 +17,10 @@
     "near-cli": "^3.3.0"
   },
   "dependencies": {
-    "next": "^13.4.2"
+    "near-sdk-as": "^3.2.3",
+    "near-sdk-core": "^3.2.1",
+    "next": "^13.4.2",
+    "persistentmap": "^1.1.5",
+    "shelljs": "^0.8.5"
   }
 }
