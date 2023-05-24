@@ -38,6 +38,9 @@ export function transferCertified(newOwner: string, certified_registry_number: s
    return temCertified;
 }
 
+
+
+
 // export function getAllCertifies(): Array<Certified> {
 //    const result = new Array<Certified>();
 //    for (let index = 0; index < certifies.length; index++) {
