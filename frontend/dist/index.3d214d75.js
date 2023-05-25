@@ -557,9 +557,13 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"bB7Pu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createMinor", ()=>createMinor);
 var _runtime = require("regenerator-runtime/runtime");
 var _nearWallet = require("./near-wallet");
-const CONTRACT_ADDRESS = "dev-1684285888694-37234344450430";
+const CONTRACT_ADDRESS = "dev-1684291002086-29477754586776";
+// const CONTRACT_ADDRESS = process.env.CONTRACT_NAME;
 // When creating the wallet you can optionally ask to create an access key
 // Having the key enables to call non-payable methods without interrupting the user to sign
 const wallet = new (0, _nearWallet.Wallet)({
@@ -623,8 +627,11 @@ function signedInFlow() {
         el.innerText = wallet.accountId;
     });
 }
+function createMinor(certified_title, certified_created_at, certified_faculty_name, certified_faculty_direction, certified_registry_number, certified_secretary_name, certified_chancellor_name, certified_resourse) {
+    wallet.newMinor(certified_title, certified_created_at, certified_faculty_name, certified_faculty_direction, certified_registry_number, certified_secretary_name, certified_chancellor_name, certified_resourse);
+}
 
-},{"regenerator-runtime/runtime":"dXNgZ","./near-wallet":"dg9wB"}],"dXNgZ":[function(require,module,exports) {
+},{"regenerator-runtime/runtime":"dXNgZ","./near-wallet":"dg9wB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -1323,6 +1330,9 @@ class Wallet {
         // Retrieve transaction result from the network
         const transaction = await provider.txStatus(txhash, "unnused");
         return (0, _nearApiJs.providers).getTransactionLastResult(transaction);
+    }
+    async newMinor() {
+        const newCertified = await this.wallet.createCertified(certified_title, certified_created_at, certified_faculty_name, certified_faculty_direction, certified_registry_number, certified_secretary_name, certified_chancellor_name, certified_resource);
     }
 }
 
@@ -56292,8 +56302,8 @@ var _core = require("@near-wallet-selector/core");
 var _hwTransportWebhid = require("@ledgerhq/hw-transport-webhid");
 var _hwTransportWebhidDefault = parcelHelpers.interopDefault(_hwTransportWebhid);
 var _nearApiJs = require("near-api-js");
-var Buffer = require("87aa90875b0b2bc7").Buffer;
 var global = arguments[3];
+var Buffer = require("87aa90875b0b2bc7").Buffer;
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 

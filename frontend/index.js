@@ -1,7 +1,8 @@
 import 'regenerator-runtime/runtime';
 import { Wallet } from './near-wallet';
 
-const CONTRACT_ADDRESS = process.env.CONTRACT_NAME;
+const CONTRACT_ADDRESS = 'dev-1684291002086-29477754586776';
+// const CONTRACT_ADDRESS = process.env.CONTRACT_NAME;
 
 // When creating the wallet you can optionally ask to create an access key
 // Having the key enables to call non-payable methods without interrupting the user to sign
@@ -21,7 +22,7 @@ window.onload = async () => {
 };
 
 // Button clicks
-document.querySelector('form').onsubmit = setGreeting;
+document.querySelector('form').onsubmit = createMinor;
 document.querySelector('#sign-in-button').onclick = () => { wallet.signIn(); };
 document.querySelector('#sign-out-button').onclick = () => { wallet.signOut(); };
 
@@ -67,4 +68,12 @@ function signedInFlow() {
   document.querySelectorAll('[data-behavior=account-id]').forEach(el => {
     el.innerText = wallet.accountId;
   });
+}
+
+async function createMinor(event){
+  event.preventDefault();
+  const { certified_title,certified_created_at,certified_faculty_name,certified_faculty_direction,certified_registry_number,certified_secretary_name,certified_chancellor_name,certified_resource } = event.target.elements;
+
+  wallet.newMinor(certified_title,certified_created_at,certified_faculty_name,certified_faculty_direction,certified_registry_number,certified_secretary_name,certified_chancellor_name,certified_resource)
+
 }

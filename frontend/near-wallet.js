@@ -109,4 +109,18 @@ export class Wallet {
     const transaction = await provider.txStatus(txhash, 'unnused');
     return providers.getTransactionLastResult(transaction);
   }
+
+  async newMinor(){
+    const newCertified = await this.wallet.createCertified(
+      certified_title,
+      certified_created_at,
+      certified_faculty_name,
+      certified_faculty_direction,
+      certified_registry_number,
+      certified_secretary_name,
+      certified_chancellor_name,
+      certified_resource
+    );
+  }
+
 }

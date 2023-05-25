@@ -11,7 +11,7 @@ export function createCertified(
    certified_registry_number: string,
    certified_secretary_name: string,
    certified_chancellor_name: string,
-   certified_resourse: string
+   certified_resource: string
 ): Certified {
 
    // Obtener el remitente actual
@@ -20,7 +20,7 @@ export function createCertified(
    // Crear un nuevo objeto Certified
    const newCertified = new Certified(certified_title, certified_created_at, certified_faculty_name,
       certified_faculty_direction, certified_registry_number,
-      certified_secretary_name, certified_chancellor_name, certified_resourse, sender, sender);
+      certified_secretary_name, certified_chancellor_name, certified_resource, sender, sender);
 
    // Agregar el nuevo objeto Certified al mapapersistente
    certifies.set(certified_registry_number, newCertified);

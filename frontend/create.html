@@ -42,43 +42,43 @@
   </nav>
   <main>
     <br>
-    <form>
+    <form  onsubmit="createMinor(this.certified_title.value,this.certified_created_at.value, this.certified_faculty_name.value, this.certified_faculty_direction.value, this.certified_registry_number.value, this.certified_secretary_name.value, this.certified_chancellor_name.value, this.certified_resource.value); event.preventDefault();">
       <div class="mb-3">
-        <label for="title" class="form-label">Titulo</label>
-        <input type="text" class="form-control" id="title">
-      </div>
-      <div class="mb-3">
-        <label for="created_by" class="form-label">Emisor</label>
-        <input type="text" class="form-control" id="created_by">
+        <label for="certified_title" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="certified_title">
       </div>
       <div class="mb-3">
-        <label for="created_at" class="form-label">Fecha</label>
-        <input type="date" class="form-control" id="created_at">
+        <label for="certified_created_at" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="certified_created_at">
       </div>
       <div class="mb-3">
-        <label for="faculty_name" class="form-label">Facultad</label>
-        <input type="text" class="form-control" id="faculty_name">
+        <label for="certified_faculty_name" class="form-label">Facultad</label>
+        <input type="text" class="form-control" id="certified_faculty_name">
       </div>
       <div class="mb-3">
-        <label for="faculty_direction" class="form-label">escuela</label>
-        <input type="text" class="form-control" id="faculty_direction">
+        <label for="certified_faculty_direction" class="form-label">Escuela</label>
+        <input type="text" class="form-control" id="certified_faculty_direction">
       </div>
       <div class="mb-3">
-        <label for="registry_number" class="form-label">Numero de Registro</label>
-        <input type="number" class="form-control" id="registry_number">
+        <label for="certified_registry_number" class="form-label">Numero de Registro</label>
+        <input type="text" class="form-control" id="certified_registry_number">
       </div>
       <div class="mb-3">
-        <label for="secretary_name" class="form-label">Director</label>
-        <input type="text" class="form-control" id="secretary_name">
+        <label for="certified_secretary_name" class="form-label">Director</label>
+        <input type="text" class="form-control" id="certified_secretary_name">
       </div>
       <div class="mb-3">
-        <label for="chancellor_name" class="form-label">Rector</label>
-        <input type="text" class="form-control" id="chancellor_name">
+        <label for="certified_chancellor_name" class="form-label">Rector</label>
+        <input type="text" class="form-control" id="certified_chancellor_name">
       </div>
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupFile01">PDF Minor</label>
-        <input type="file" class="form-control" id="inputGroupFile01">
+      <div class="mb-3">
+        <label for="certified_resource" class="form-label">PDF Minor</label>
+        <input type="text" class="form-control" id="certified_resource">
       </div>
+      <!-- <div class="input-group mb-3">
+        <label class="input-group-text" for="minorFile">PDF Minor</label>
+        <input type="file" class="form-control" id="minorFile">
+      </div> -->
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br>
