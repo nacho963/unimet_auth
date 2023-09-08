@@ -1,79 +1,42 @@
+// Importar el archivo de conexión
+const connect = require('./near');
 import 'regenerator-runtime/runtime';
 import { Wallet } from './near-wallet';
+// Función para interactuar con el contrato
+async function interactWithContract() {
+  // Conectar a NEAR
+  const { nearAPI, account } = await connect();
 
-const CONTRACT_ADDRESS = 'dev-1684291002086-29477754586776';
-// const CONTRACT_ADDRESS = process.env.CONTRACT_NAME;
-
-// When creating the wallet you can optionally ask to create an access key
-// Having the key enables to call non-payable methods without interrupting the user to sign
-const wallet = new Wallet({ createAccessKeyFor: CONTRACT_ADDRESS })
-
-// Setup on page load
-window.onload = async () => {
-  let isSignedIn = await wallet.startUp();
-
-  if (isSignedIn) {
-    signedInFlow();
-  } else {
-    signedOutFlow();
-  }
-
-  getGreeting();
-};
-
-// Button clicks
-document.querySelector('form').onsubmit = createMinor;
-document.querySelector('#sign-in-button').onclick = () => { wallet.signIn(); };
-document.querySelector('#sign-out-button').onclick = () => { wallet.signOut(); };
-
-async function setGreeting(event) {
-  // handle UI
-  event.preventDefault();
-  const { greeting } = event.target.elements;
-
-  document.querySelector('#signed-in-flow main')
-    .classList.add('please-wait');
-
-  // use the wallet to send the greeting to the Smart Contract
-  await wallet.callMethod({ method: 'set_greeting', args: { message: greeting.value }, contractId: CONTRACT_ADDRESS });
-
-  // query the new greeting
-  await getGreeting();
-
-  // handle UI stuff
-  document.querySelector('#signed-in-flow main').classList.remove('please-wait');
-}
-
-async function getGreeting() {
-  // use the wallet to query the Smart Contract
-  const currentGreeting = await wallet.viewMethod({ method: 'get_greeting', contractId: CONTRACT_ADDRESS });
-
-  // handle UI stuff
-  document.querySelectorAll('[data-behavior=greeting]').forEach(el => {
-    el.innerText = currentGreeting;
-    el.value = currentGreeting;
+  // Obtener la instancia del contrato
+  const contractId = 'dev-1686275423526-60239495266974'; // Reemplazar por la cuenta de tu contrato
+  const contract = new nearAPI.Contract(account, contractId, {
+    viewMethods: ['get_all_certified', 'get_certified'], // Métodos de solo lectura
+    changeMethods: ['create_certified', 'update_certified', 'transfer_certified_ownership'], // Métodos de modificación
   });
+
+  const wallet = new Wallet({ createAccessKeyFor: contractId })
+
+  // Ejemplo de llamada a un método de solo lectura
+  const allCertified = await contract.get_all_certified();
+  console.log('Todos los certificados:', allCertified);
+
+  // Ejemplo de llamada a un método de modificación
+  const result = await contract.create_certified(
+    'Título del certificado',
+    'Fecha de creación',
+    'Nombre de la facultad',
+    'Dirección de la facultad',
+    'Número de registro',
+    'Nombre del secretario',
+    'Nombre del canciller',
+    'Recurso del certificado'
+  );
+  console.log('Nuevo certificado creado:', result);
+
+  document.querySelector('#sign-out-button').onclick = () => { wallet.signOut(); };
 }
 
-// UI: Display the signed-out-flow container
-function signedOutFlow() {
-  document.querySelector('#signed-in-flow').style.display = 'none';
-  document.querySelector('#signed-out-flow').style.display = 'block';
-}
 
-// UI: Displaying the signed in flow container and fill in account-specific data
-function signedInFlow() {
-  document.querySelector('#signed-out-flow').style.display = 'none';
-  document.querySelector('#signed-in-flow').style.display = 'block';
-  document.querySelectorAll('[data-behavior=account-id]').forEach(el => {
-    el.innerText = wallet.accountId;
-  });
-}
 
-async function createMinor(event){
-  event.preventDefault();
-  const { certified_title,certified_created_at,certified_faculty_name,certified_faculty_direction,certified_registry_number,certified_secretary_name,certified_chancellor_name,certified_resource } = event.target.elements;
-
-  wallet.newMinor(certified_title,certified_created_at,certified_faculty_name,certified_faculty_direction,certified_registry_number,certified_secretary_name,certified_chancellor_name,certified_resource)
-
-}
+// Llamar a la función de interacción con el contrato
+interactWithContract();
